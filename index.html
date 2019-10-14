@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <input type="text" id="value"/>
+        <button>Insert</button>
+        <script>
+            $(document).ready(function(){
+                $("button").click(function(e) {
+                    e.preventDefault();
+                    $.ajax({
+                        type: "GET",
+                        url: "/",
+                        data: {value: $("#value").val()},
+                        success: function(err, data) {
+                            console.log(true);
+                        }
+                    })
+                })
+            })
+        </script>
+    </body>
